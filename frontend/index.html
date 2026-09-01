@@ -1,0 +1,238 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LRU Cache Visualizer</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>LRU Cache Visualizer</h1>
+
+        <p>
+            HashMap + Circular Doubly Linked List
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- CACHE CONFIGURATION -->
+
+        <section class="card">
+
+            <h2>Cache Configuration</h2>
+
+            <div class="form">
+
+                <input
+                    id="capacityInput"
+                    type="number"
+                    min="1"
+                    placeholder="Enter cache capacity"
+                >
+
+                <button onclick="setCapacity()">
+                    Set Capacity
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CACHE INFORMATION -->
+
+        <section class="card">
+
+            <h2>Cache Information</h2>
+
+            <div class="stats">
+
+                <div>
+                    <span>Capacity</span>
+                    <strong id="capacity">3</strong>
+                </div>
+
+                <div>
+                    <span>Current Size</span>
+                    <strong id="size">0</strong>
+                </div>
+
+                <div>
+                    <span>Hits</span>
+                    <strong id="hits">0</strong>
+                </div>
+
+                <div>
+                    <span>Misses</span>
+                    <strong id="misses">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PUT -->
+
+        <section class="card">
+
+            <h2>PUT Operation</h2>
+
+            <div class="form">
+
+                <input
+                    id="putKey"
+                    type="number"
+                    placeholder="Enter key"
+                >
+
+                <input
+                    id="putValue"
+                    type="number"
+                    placeholder="Enter value"
+                >
+
+                <button onclick="putItem()">
+                    PUT
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GET -->
+
+        <section class="card">
+
+            <h2>GET Operation</h2>
+
+            <div class="form">
+
+                <input
+                    id="getKey"
+                    type="number"
+                    placeholder="Enter key"
+                >
+
+                <button
+                    class="get-button"
+                    onclick="getItem()"
+                >
+                    GET
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <div
+            id="status"
+            class="status"
+        >
+            Cache is ready.
+        </div>
+
+
+        <!-- VISUALIZATION -->
+
+        <section class="card">
+
+            <div class="title-row">
+
+                <div>
+
+                    <h2>Cache Visualization</h2>
+
+                    <p>
+                        Most Recently Used → Least Recently Used
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="cache"
+                class="cache"
+            >
+
+                <div class="empty">
+                    Cache is empty
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORY -->
+
+        <section class="card">
+
+            <h2>Operation History</h2>
+
+            <div id="history">
+
+                <p class="empty">
+                    No operations yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLEAR -->
+
+        <button
+            class="clear-button"
+            onclick="clearCache()"
+        >
+            Clear Cache
+        </button>
+
+    </main>
+
+
+    <footer>
+
+        LRU Cache Visualizer
+        <br>
+        Java Backend + HTML/CSS/JavaScript Frontend
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

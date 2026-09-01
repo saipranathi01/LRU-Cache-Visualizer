@@ -1,0 +1,311 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+header {
+    background: #111827;
+    color: white;
+    padding: 35px;
+    text-align: center;
+}
+
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+
+header p {
+    color: #cbd5e1;
+}
+
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.card h2 {
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+
+.card p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.stats div {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.stats span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+
+.stats strong {
+    font-size: 28px;
+}
+
+
+.form {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+
+input {
+    flex: 1;
+    min-width: 150px;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+
+input:focus {
+    border-color: #2563eb;
+}
+
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 25px;
+    background: #111827;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+.get-button {
+    background: #2563eb;
+}
+
+
+.clear-button {
+    width: 100%;
+    background: #dc2626;
+    margin-bottom: 30px;
+}
+
+
+.status {
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+
+.cache {
+    min-height: 220px;
+    margin-top: 25px;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+
+.cache-node {
+    min-width: 130px;
+    background: white;
+    border: 3px solid #2563eb;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+    animation: showNode 0.3s ease;
+}
+
+
+.cache-node.lru {
+    border-color: #dc2626;
+}
+
+
+.label {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.cache-node.lru .label {
+    background: #dc2626;
+}
+
+
+.key {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+.value {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+.arrow {
+    font-size: 28px;
+    color: #9ca3af;
+}
+
+
+.empty {
+    color: #9ca3af;
+    text-align: center;
+}
+
+
+.history-item {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@keyframes showNode {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+footer {
+    text-align: center;
+    color: #6b7280;
+    padding: 25px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .cache {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   CAPACITY CONFIGURATION
+========================= */
+
+#capacityInput {
+    max-width: 300px;
+}
+
+
+@media (max-width: 450px) {
+
+    #capacityInput {
+        max-width: 100%;
+    }
+}
+
